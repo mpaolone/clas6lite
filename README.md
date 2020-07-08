@@ -5,7 +5,8 @@ Some things you will need (from brew)
 
   gcc, scons, openmotif, mysql, and maybe other things that I have already installed
 
-You will also need X11 libraries that you can get from xquartz.org
+You will also need X11 libraries that you can get from xquartz.org.
+
 You will also need cernlib, or the nanocernlib wich can be found at: https://github.com/mpaolone/nanocernlib
 
 # build and install
