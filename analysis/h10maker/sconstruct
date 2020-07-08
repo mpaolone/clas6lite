@@ -1,0 +1,19 @@
+from build_system import environment
+import glob
+
+h10maker_env = environment.env(deps='clas6 root'.split())
+h10maker_env.load_dependency({'root': ['default_libs'], 'clas6':['default_libs']})
+#h10maker_fortenv = environment.env(deps=['clas6'])
+#h10maker_fortenv = h10maker_env.Clone()
+#h10maker_fortenv.load_dependency('clas6')
+#sources_fort = glob.glob("*.F")
+#h10maker_fortenv.library(source=sources_fort)
+
+if '-stdlib=libc++' in h10maker_env['CPPFLAGS']:
+    h10maker_env['CPPFLAGS'].remove('-stdlib=libc++')
+
+sources =['h10maker.cc']
+sources += glob.glob("*.F")
+sources += ['mctk.cc','mvrt.cc','Options.cc','part.cc','seb.cc']
+h10maker_env.program(source=sources, target='h10maker')
+
