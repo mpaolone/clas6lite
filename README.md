@@ -12,13 +12,15 @@ You will also need cernlib, or the nanocernlib wich can be found at: https://git
 
 you will need to use scons to build.  From the main directory you can type
 
-  scons -j<number of cores>
+  scons -j[number of cores]
 	  
-Where <number of cores> is an integer of the number of cores you want to dedicate to compiling (I use 8, typically).
+Where [number of cores] is an integer of the number of cores you want to dedicate to compiling (I use 8, typically).
   
 NOTE:  The first time you run this you will need to add some options, specifically:
 
-  scons mysqlinc=/usr/local/Cellar/mysql/<version>/include/mysql mysqllib=/usr/local/Cellar/mysql/<version>/lib tcllib=/opt/X11/lib gfortranlib=/usr/local/Cellar/gcc/<version>/lib/gcc/<tag> -j8
+  scons mysqlinc=/usr/local/Cellar/mysql/[VERSION]/include/mysql mysqllib=/usr/local/Cellar/mysql/[VERSION]/lib tcllib=/opt/X11/lib gfortranlib=/usr/local/Cellar/gcc/[VERSION]/lib/gcc/[TAG] -j8
 	  
 
-notice that <version> is the version you got from brew, and that <tag> is the top-level version of gcc (i.e. my gcc has <version>=10.1.0 and <tag>=10)
+notice that [VERSION] is the version you got from brew, and that [TAG] is the top-level version of gcc (i.e. my gcc has [VERSION]=10.1.0 and [TAG]=10)
+
+you can see all options for scons with "scons -h"  and you can clean your build with "scons --clean".  See the clas6 software documentation for more details
